@@ -1,0 +1,11 @@
+import express from "express";
+import db from "./config/db.js";
+import dotenv from "dotenv";
+const app = express();
+db();
+dotenv.config();
+import blogRoutes from "./routes/blog.route.js";
+const PORT = process.env.PORT || 3000;
+app.use(express.json());
+app.use("/api/v0", blogRoutes);
+app.listen(PORT, () => console.log(`App Started on https://localhost:${PORT} `));
