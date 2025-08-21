@@ -9,11 +9,12 @@ const postSchema = new mongoose.Schema({
             type: String,
             required: true,
       },
-      user: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User",
-      },
-      comment: [
+      // ?You should also includes user here
+      // ?user: {
+      // ?      type: mongoose.Schema.Types.ObjectId,
+      //  ?     ref: "User",
+      // },
+      comments: [
             {
                   type: mongoose.Schema.Types.ObjectId,
                   ref: "Comment",
@@ -26,4 +27,4 @@ const postSchema = new mongoose.Schema({
             },
       ],
 });
-export default mongoose.model("Like", postSchema);
+export default mongoose.model("Post", postSchema);

@@ -5,11 +5,12 @@ const commentSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: "Post",
       },
-      user: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User",
-      },
-      content: {
+      // ?You should also includes user here
+      // user: {
+      //       type: mongoose.Schema.Types.ObjectId,
+      //       ref: "User",
+      // },
+      comment: {
             type: String,
             required: true,
             min: 1,
